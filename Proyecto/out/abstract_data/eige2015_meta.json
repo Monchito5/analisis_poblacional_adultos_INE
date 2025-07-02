@@ -1,0 +1,20 @@
+{
+  "filas": 20,
+  "columnas": 14,
+  "columnas_nombres": [
+    "entidad",
+    "distrito_cod",
+    "porc_0a9",
+    "porc_10a19",
+    "porc_20a29",
+    "porc_30a39",
+    "porc_40a49",
+    "porc_50a59",
+    "porc_60ymas",
+    "porc_edadne",
+    "pob_total",
+    "porc_18ymas",
+    "hombres_18+",
+    "mujeres_18+"
+  ]
+}

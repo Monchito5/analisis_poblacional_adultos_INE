@@ -1,0 +1,13 @@
+{
+  "filas": 20,
+  "columnas": 7,
+  "columnas_nombres": [
+    "entidad",
+    "distrito_cod",
+    "tiene_ine",
+    "p_0a17",
+    "p_18ymas",
+    "hombres_18+",
+    "mujeres_18+"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "filas": 3906,
+  "columnas": 15,
+  "columnas_nombres": [
+    "clave_entidad",
+    "nombre_entidad",
+    "clave_distrito",
+    "cabecera_distrital",
+    "clave_municipio",
+    "nombre_municipio",
+    "seccion",
+    "padron_hombres",
+    "padron_mujeres",
+    "padron_nobinario",
+    "padron_electoral",
+    "lista_hombres",
+    "lista_mujeres",
+    "lista_nobinario",
+    "lista_nominal"
+  ]
+}
