@@ -77,15 +77,15 @@ def add_distrito_name(df, code_col="distrito_cod"):
     df["distrito_nombre"] = df[code_col].map(DISTRITO_MAP)
     return df
 
-def group_by_real_distrito(df, code_col="distrito_cod"):
-    """Agrupa por distritos reales (combinando códigos)"""
+def group_by_distrito_name(df, code_col="distrito_cod"):
+    """Agrupa por nombre de distrito (combinando códigos)"""
     # Crear mapeo inverso para agrupación
     inverse_map = {}
     for distrito, codigos in DISTRITO_GROUP.items():
         for codigo in codigos:
             inverse_map[codigo] = distrito
     
-    df["distrito_real"] = df[code_col].map(inverse_map)
+    df["distrito_nombre"] = df[code_col].map(inverse_map)
     return df
 
 def explorer_2015():
@@ -106,10 +106,10 @@ def explorer_2015():
 
     # Añadir nombres y agrupar distritos
     df = add_distrito_name(df)
-    df = group_by_real_distrito(df)
+    df = group_by_distrito_name(df)
     
-    # 1. Población adulta por distrito REAL (agrupado)
-    adult_data = df.groupby("distrito_real", as_index=False).agg({
+    # 1. Población adulta por nombre de distrito (agrupado)
+    adult_data = df.groupby("distrito_nombre", as_index=False).agg({
         "hombres_18+": "sum",
         "mujeres_18+": "sum"
     })
@@ -173,18 +173,18 @@ def explorer_2020():
 
     # Añadir nombres y agrupar distritos
     df = add_distrito_name(df)
-    df = group_by_real_distrito(df)
+    df = group_by_distrito_name(df)
 
-    # 1. Población adulta por distrito REAL (agrupado)
+    # 1. Población adulta por nombre de distrito (agrupado)
     df["pob_total"] = df["p_0a17"] + df["p_18ymas"]
-    adult_data = df.groupby("distrito_real", as_index=False).agg({
+    adult_data = df.groupby("distrito_nombre", as_index=False).agg({
         "hombres_18+": "sum",
         "mujeres_18+": "sum",
         "p_18ymas": "sum"
     })
     adult_data.rename(columns={"p_18ymas": "total_adultos"}, inplace=True)
     adult_data.to_csv(ABSTRACT_DIR / "poblacion_adulta_2020.csv", index=False)
-    print("✔️ Población adulta por distrito REAL guardada")
+    print("✔️ Población adulta por nombre de distrito guardada")
 
     # 2. Resumen Jalisco
     jalisco_2020 = {
@@ -221,10 +221,10 @@ def explorer_2025():
 
     # Añadir nombres de distrito usando clave_distrito
     df = add_distrito_name(df.copy(), code_col="clave_distrito")
-    df = group_by_real_distrito(df.copy(), code_col="clave_distrito")
+    df = group_by_distrito_name(df.copy(), code_col="clave_distrito")
 
-    # 1. Agrupar por distrito REAL
-    distrito_data = df.groupby("distrito_real", as_index=False).agg({
+    # 1. Agrupar por nombre de distrito
+    distrito_data = df.groupby("distrito_nombre", as_index=False).agg({
         "padron_hombres": "sum",
         "padron_mujeres": "sum",
         "padron_electoral": "sum"
@@ -236,7 +236,7 @@ def explorer_2025():
     }, inplace=True)
     distrito_data.to_csv(ABSTRACT_DIR / "poblacion_adulta_distrito_2025.csv", index=False)
 
-    # 2. Agrupar por municipio (para ZMG/GDL)
+    # 2. Agrupar por municipio (para ZMG)
     municipio_data = df.groupby(["clave_municipio", "nombre_municipio"], as_index=False).agg({
         "padron_hombres": "sum",
         "padron_mujeres": "sum",
@@ -248,7 +248,7 @@ def explorer_2025():
         "padron_electoral": "total_adultos"
     }, inplace=True)
     municipio_data.to_csv(ABSTRACT_DIR / "poblacion_adulta_municipio_2025.csv", index=False)
-    print("✔️ Datos adultos por distrito/municipio REALES guardados")
+    print("✔️ Datos adultos por distrito/municipio guardados")
 
     # 1. Distribución general de padron vs lista
     calculate_distribution(df, "padron_electoral", "conteo_general_ine_2025")

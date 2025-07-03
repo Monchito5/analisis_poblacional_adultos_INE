@@ -1,6 +1,6 @@
 {
   "filas": 3906,
-  "columnas": 17,
+  "columnas": 16,
   "columnas_nombres": [
     "clave_entidad",
     "nombre_entidad",
@@ -17,7 +17,6 @@
     "lista_mujeres",
     "lista_nobinario",
     "lista_nominal",
-    "distrito_nombre",
-    "distrito_real"
+    "distrito_nombre"
   ]
 }

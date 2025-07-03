@@ -17,6 +17,7 @@ ABSTRACT_DIR  = OUTPUT_DIR  / "abstract_data"
 IMG_DIR       = OUTPUT_DIR  / "img"
 SCREENSHOTS   = IMG_DIR  / "screenshots"
 STAT_GRAPHS   = IMG_DIR  / "statistical_graphs"
+INTERACTIVE_DIR = BASE_DIR / "out" / "interactive"
 
 # 4. Rutas automáticas por dataset
 PATHS = {
@@ -32,6 +33,6 @@ PATHS = {
 for folder in (
     RAW_DIR, PREPARED_DIR,
     ABSTRACT_DIR,
-    SCREENSHOTS, STAT_GRAPHS
+    SCREENSHOTS, STAT_GRAPHS, INTERACTIVE_DIR
 ):
     folder.mkdir(parents=True, exist_ok=True)

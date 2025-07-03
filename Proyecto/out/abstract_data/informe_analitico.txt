@@ -1,0 +1,47 @@
+======================================================================
+INFORME ANALÍTICO: EVOLUCIÓN DEMOGRÁFICA DE JALISCO
+======================================================================
+
+1. CRECIMIENTO POBLACIONAL (2015-2025)
+----------------------------------------------------------------------
+• Población adulta en Jalisco creció de 5,232,589 (2015) a 6,718,811 (2025)
+• Tasa de crecimiento acumulada: 28.4%
+
+Crecimiento por región (2015-2025):
+  - ZMG: 20.3% (2,449,197 → 2,946,245)
+  - GDL: 29.8% (1,059,164 → 1,374,314)
+
+2. DISTRIBUCIÓN POR GÉNERO (2025)
+----------------------------------------------------------------------
+• Jalisco:
+  - Hombres: 48.6% (3,263,251)
+  - Mujeres: 51.4% (3,455,560)
+  - Índice de feminidad: 105.9%
+• ZMG:
+  - Hombres: 48.3% (1,423,755)
+  - Mujeres: 51.7% (1,522,490)
+  - Índice de feminidad: 106.9%
+• GDL:
+  - Hombres: 48.1% (661,016)
+  - Mujeres: 51.9% (713,298)
+  - Índice de feminidad: 107.9%
+
+3. TENDENCIAS DE CRECIMIENTO ANUAL
+----------------------------------------------------------------------
+Período 2015-2020:
+  - Jalisco: 10.2%
+  - ZMG: 8.1%
+  - GDL: -1.1%
+
+Período 2020-2025:
+  - Jalisco: 16.5%
+  - ZMG: 11.3%
+  - GDL: 31.2%
+
+4. HALLAZGOS CLAVE
+----------------------------------------------------------------------
+• La Zona Metropolitana de Guadalajara (ZMG) concentra la mayor proporción
+  de población adulta en el estado
+• Se observa una tendencia de crecimiento acelerado en la región de GDL
+• El índice de feminidad muestra una distribución equilibrada en todas las regiones
+• El mayor crecimiento se registró en el período 2020-2025 en todas las regiones
