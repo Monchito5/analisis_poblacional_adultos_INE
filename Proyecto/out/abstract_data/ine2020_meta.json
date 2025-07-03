@@ -1,6 +1,6 @@
 {
   "filas": 20,
-  "columnas": 7,
+  "columnas": 10,
   "columnas_nombres": [
     "entidad",
     "distrito_cod",
@@ -8,6 +8,9 @@
     "p_0a17",
     "p_18ymas",
     "hombres_18+",
-    "mujeres_18+"
+    "mujeres_18+",
+    "distrito_nombre",
+    "distrito_real",
+    "pob_total"
   ]
 }

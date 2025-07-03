@@ -191,7 +191,7 @@ pip install pandas numpy scipy scikit-learn matplotlib seaborn
 ## 6. Contacto
 
 Guillermo Daniel Zaragoza Castro
-🔗 \[[text](guillermo.zaragoza8731@alumnos.udg.mx)] – \[[text](https://github.com/Monchito5)]
+🔗 \[[Correo Electrónico](guillermo.zaragoza8731@alumnos.udg.mx)] – \[[Github](https://github.com/Monchito5)]
 
 ```
 ```
