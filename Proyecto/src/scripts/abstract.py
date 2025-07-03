@@ -2,7 +2,17 @@
 
 import pandas as pd
 from pathlib import Path
-from src.config.settings import ABSTRACT_DIR, PATHS
+from src.config.settings import (
+    BASE_DIR,
+    RAW_DIR,
+    PREPARED_DIR,
+    ABSTRACT_DIR,
+    INTERACTIVE_DIR,
+    STATIC_DIR,
+    SCREENSHOTS_DIR,
+    PATHS,
+    REGION_CONFIG
+)
 
 # Configuración de regiones unificada
 REGION_CONFIG_2015 = {

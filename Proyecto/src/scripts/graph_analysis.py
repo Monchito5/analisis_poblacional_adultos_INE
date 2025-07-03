@@ -1,6 +1,5 @@
 # Visualización de análisis exploratorio
 
-# Visualización avanzada de análisis exploratorio
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -9,12 +8,21 @@ import plotly.express as px
 import plotly.io as pio
 from matplotlib import patheffects
 from pathlib import Path
-from src.config.settings import ABSTRACT_DIR, STAT_GRAPHS, INTERACTIVE_DIR
-
+from src.config.settings import (
+    BASE_DIR,
+    RAW_DIR,
+    PREPARED_DIR,
+    ABSTRACT_DIR,
+    INTERACTIVE_DIR,
+    STATIC_DIR,
+    SCREENSHOTS_DIR,
+    PATHS,
+    REGION_CONFIG
+)
 # Asegurar carpetas de destino
-STAT_GRAPHS.mkdir(parents=True, exist_ok=True)
+STATIC_DIR.mkdir(parents=True, exist_ok=True)
 INTERACTIVE_DIR.mkdir(parents=True, exist_ok=True)
-print(f"📂 Directorio de gráficos estáticos: {STAT_GRAPHS}")
+print(f"📂 Directorio de gráficos estáticos: {STATIC_DIR}")
 print(f"📂 Directorio de gráficos interactivos: {INTERACTIVE_DIR}")
 
 # Configuración global mejorada
@@ -161,7 +169,7 @@ def plot_gender_comparison(df, x_col, male_col, female_col, title, filename):
                    frameon=True, shadow=True, loc='best')
         
         # Guardar estático
-        static_path = STAT_GRAPHS / filename
+        static_path = STATIC_DIR / filename
         plt.tight_layout()
         plt.savefig(static_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -285,7 +293,7 @@ def plot_age_distribution(df, x_col, y_col, title, filename):
         apply_advanced_styling(ax, title)
         
         # Guardar estático
-        static_path = STAT_GRAPHS / filename
+        static_path = STATIC_DIR / filename
         plt.tight_layout()
         plt.savefig(static_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -397,7 +405,7 @@ def plot_top_locations(df, x_col, y_col, title, filename, n=10):
         apply_advanced_styling(ax, title)
         
         # Guardar estático
-        static_path = STAT_GRAPHS / filename
+        static_path = STATIC_DIR / filename
         plt.tight_layout()
         plt.savefig(static_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -576,7 +584,7 @@ def main():
     graph_2025()
     
     print("\n" + "="*70)
-    print(f"✅ Gráficos estáticos guardados en: {STAT_GRAPHS}".center(70))
+    print(f"✅ Gráficos estáticos guardados en: {STATIC_DIR}".center(70))
     print(f"✅ Gráficos interactivos guardados en: {INTERACTIVE_DIR}".center(70))
     print("="*70)
 

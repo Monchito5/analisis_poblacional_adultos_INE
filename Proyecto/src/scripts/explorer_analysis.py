@@ -2,8 +2,17 @@
 import pandas as pd
 import json
 from pathlib import Path
-from src.config.settings import PATHS, ABSTRACT_DIR, OUTPUT_DIR
-
+from src.config.settings import (
+    BASE_DIR,
+    RAW_DIR,
+    PREPARED_DIR,
+    ABSTRACT_DIR,
+    INTERACTIVE_DIR,
+    STATIC_DIR,
+    SCREENSHOTS_DIR,
+    PATHS,
+    REGION_CONFIG
+)
 # Mapeo de códigos a nombres de distritos
 DISTRITO_MAP = {
     1: "TEQUILA",
@@ -267,8 +276,7 @@ def explorer_2025():
 
 def main():
     # Asegurar directorios
-    for folder in (ABSTRACT_DIR, OUTPUT_DIR):
-        Path(folder).mkdir(parents=True, exist_ok=True)
+    ABSTRACT_DIR.mkdir(parents=True, exist_ok=True)
 
     print("🔍 Explorando datos EIGE 2015...")
     explorer_2015()

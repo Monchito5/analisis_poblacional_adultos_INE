@@ -12,16 +12,25 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_squared_error
 from scipy import stats
 from matplotlib import patheffects
-from src.config.settings import ABSTRACT_DIR, STAT_GRAPHS, INTERACTIVE_DIR
-
+from src.config.settings import (
+    BASE_DIR,
+    RAW_DIR,
+    PREPARED_DIR,
+    ABSTRACT_DIR,
+    INTERACTIVE_DIR,
+    STATIC_DIR,
+    SCREENSHOTS_DIR,
+    PATHS,
+    REGION_CONFIG
+)
 # Asegurar carpetas de destino
-STAT_GRAPHS.mkdir(parents=True, exist_ok=True)
+STATIC_DIR.mkdir(parents=True, exist_ok=True)
 INTERACTIVE_DIR.mkdir(parents=True, exist_ok=True)
 
 # Configuración global mejorada
 plt.rcParams['font.family'] = 'DejaVu Sans'
 plt.rcParams['axes.unicode_minus'] = False
-plt.rcParams['axes.titlepad'] = 20
+plt.rcParams['axes.titlepad'] = 10
 plt.rcParams['axes.titleweight'] = 'bold'
 plt.rcParams['axes.titlesize'] = 16
 plt.rcParams['axes.labelweight'] = 'bold'
@@ -42,7 +51,7 @@ GENDER_PALETTE = {
 }
 
 # Efectos de texto
-TITLE_EFFECT = [patheffects.withStroke(linewidth=3, foreground='black')]
+TITLE_EFFECT = [patheffects.withStroke(linewidth=1, foreground='black')]
 LABEL_EFFECT = [patheffects.withStroke(linewidth=2, foreground='white')]
 
 def apply_advanced_styling(ax, title):
@@ -196,7 +205,7 @@ def plot_series(all_df: pd.DataFrame):
                    frameon=True, shadow=True, loc='best')
         
         # Guardar estático
-        static_path = STAT_GRAPHS / "serie_historica_proyeccion.png"
+        static_path = STATIC_DIR / "serie_historica_proyeccion.png"
         plt.tight_layout()
         plt.savefig(static_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -311,7 +320,7 @@ def plot_gender_composition(all_df: pd.DataFrame):
                    frameon=True, shadow=True, loc='best')
         
         # Guardar estático
-        static_path = STAT_GRAPHS / "composicion_genero.png"
+        static_path = STATIC_DIR / "composicion_genero.png"
         plt.tight_layout()
         plt.savefig(static_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -417,7 +426,7 @@ def plot_growth_rates(all_df: pd.DataFrame):
                    frameon=True, shadow=True, loc='best')
         
         # Guardar estático
-        static_path = STAT_GRAPHS / "tasas_crecimiento.png"
+        static_path = STATIC_DIR / "tasas_crecimiento.png"
         plt.tight_layout()
         plt.savefig(static_path, dpi=300, bbox_inches='tight')
         plt.close()
@@ -505,7 +514,7 @@ def main():
     logistic_majority_gender(all_data)
 
     # Gráficas mejoradas
-    print("\n🎨 Generando visualizaciones profesionales...")
+    print("\n🎨 Generando visualizaciones...")
     plot_series(all_data)
     plot_gender_composition(all_data)
     plot_growth_rates(all_data)
@@ -518,7 +527,7 @@ def main():
     print("\n" + "="*70)
     print("PROYECCIÓN COMPLETADA EXITOSAMENTE".center(70))
     print("="*70)
-    print(f"📁 Gráficos estáticos en: {STAT_GRAPHS}")
+    print(f"📁 Gráficos estáticos en: {STATIC_DIR}")
     print(f"📁 Gráficos interactivos en: {INTERACTIVE_DIR}")
 
 if __name__ == "__main__":

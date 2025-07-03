@@ -3,8 +3,17 @@
 import argparse
 import pandas as pd
 import re
-from src.config.settings import PATHS
-
+from src.config.settings import (
+    BASE_DIR,
+    RAW_DIR,
+    PREPARED_DIR,
+    ABSTRACT_DIR,
+    INTERACTIVE_DIR,
+    STATIC_DIR,
+    SCREENSHOTS_DIR,
+    PATHS,
+    REGION_CONFIG
+)
 def clean_eige_2015(raw_path, prepared_path):
     """Limpieza y preparación de datos Encuesta Intercensal Geoelectoral 2015"""
 
