@@ -2,6 +2,8 @@
 
 **Autor**  
 Guillermo Daniel Zaragoza Castro
+![serie_historica_proyeccion](https://github.com/user-attachments/assets/1f6c57af-ee9c-4d15-bd3b-f4db553049ea)
+![serie_historica_proyeccion_2](https://github.com/user-attachments/assets/22db68ea-ec3b-4a5c-9885-0c07fb39f70a)
 
 ---
 
@@ -22,6 +24,10 @@ y proyectar linealmente dichas series hasta **2035**.
 Métricas principales:
 - **POB_TOT**: población total ≥18 años
 - **HOMBRES_18+**, **MUJERES_18+**: desagregación por sexo
+### Gráficas - Población adulta por sexo y distrito (2015, 2020 y 2025)
+![adultos_sexo_distrito_2015](https://github.com/user-attachments/assets/6954053a-a423-4329-b2ea-9cae57586d09)
+![adultos_sexo_distrito_2020](https://github.com/user-attachments/assets/9e815b91-c554-4bb7-9288-4ecb3ca114e9)
+![adultos_sexo_distrito_2025](https://github.com/user-attachments/assets/beea3314-01a8-478d-b898-031428d9befe)
 
 ---
 
@@ -29,37 +35,27 @@ Métricas principales:
 
 ```text
 Proyecto/
-├─ data/
-│  ├─ raw/              # Datos originales descargados
-│  │  ├─ eige_2015.csv
-│  │  ├─ ine_2020.csv
-│  │  └─ ine_2025.csv
-│  └─ prepared/         # Datos ya limpiados/preparados
-│     ├─ eige_2015_prepared.csv
-│     ├─ ine_2020_prepared.csv
-│     └─ ine_2025_prepared.csv
-├─ out/
-│  ├─ abstract_data/    # CSVs de resumen intermedios y finales
-│  │  ├─ distribucion_distrito_eige2015.csv
-│  │  ├─ distribucion_edad_eige2015.csv
-│  │  ├─ correlacion_eige2015.csv
-│  │  ├─ resumen_2015.csv
-│  │  ├─ resumen_2020.csv
-│  │  ├─ resumen_2025.csv
-│  │  └─ resumen_final.csv
-│  └─ img/
-│     ├─ screenshots/
-│     └─ statistical_graphs/
-├─ src/
-│  ├─ config/
-│  │  └─ settings.py    # Rutas y constantes globales
-│  └─ scripts/
-│     ├─ cleaner.py          # Limpieza y preparación de raw → prepared
-│     ├─ explorer_analysis.py# Genera tablas de análisis exploratorio
-│     ├─ graph_analysis.py   # Genera gráficos a partir de los CSV de explorer
-│     ├─ abstract.py         # Concatena y resume por región/año → resumen_final.csv
-│     └─ aggregate_analysis.py # Construye serie histórica, proyecta y grafica
-└─ README.md                # (¡tú aquí!)
+├── src/
+│   ├── config/
+│   │   └── settings.py        # Configuración global del proyecto
+│   ├── scripts/
+│   │   ├── cleaner.py         # Limpieza de datos
+│   │   ├── explorer_analysis.py # Análisis exploratorio
+│   │   ├── graph_analysis.py  # Generación de gráficos
+│   │   ├── aggregate_analysis.py # Proyecciones poblacionales
+│   │   └── abstract.py        # Generación de resúmenes
+│   └── output/
+│       ├── abstract/          # Datos resumidos (CSV)
+│       ├── visualizations/
+│       │   ├── interactive/   # Gráficos interactivos (HTML)
+│       │   └── static/        # Gráficos estáticos (PNG)
+├── notebooks/
+│   ├── aggregate_analysis.ipynb # Dashboard interactivo
+│   └── settings.ipynb # Notebook de configuración
+├── data/
+│   ├── raw/                   # Datos originales
+│   └── prepared/              # Datos procesados
+└── README.md           # (<--- tú estás aquí )
 ````
 
 ---
